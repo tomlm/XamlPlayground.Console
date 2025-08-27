@@ -2,6 +2,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:console="https://github.com/jinek/consolonia"
              xmlns:vm="clr-namespace:XamlPlayground.ViewModels"
              mc:Ignorable="d" d:DesignWidth="915" d:DesignHeight="500"
              x:Class="XamlPlayground.Views.HeaderView"
@@ -14,7 +15,7 @@
   <Design.DataContext>
     <vm:MainViewModel />
   </Design.DataContext>
-  
+
   <UserControl.Styles>
 
     <Style Selector="MenuItem.main">
@@ -31,7 +32,7 @@
         </Style>
       </Style>
     </Style>
-    
+
 
     <Style Selector="Button.main">
       <Setter Property="Margin" Value="0" />
@@ -40,25 +41,25 @@
     </Style>
     <Style Selector="Button.main:pointerover">
       <Setter Property="(TextElement.Foreground)" Value="{DynamicResource SystemAltHighColor}" />
-    </Style>  
+    </Style>
     <Style Selector="Button.main:pointerover PathIcon">
       <Setter Property="(TextElement.Foreground)" Value="{DynamicResource SystemAltHighColor}" />
     </Style>
 
   </UserControl.Styles>
-  
+
   <Grid ColumnDefinitions="Auto,*,Auto,Auto" RowDefinitions="*,Auto">
 
     <DockPanel Grid.Row="0" Grid.Column="0">
 
       <Image Source="/Assets/Logo.png"
-             Margin="6,6,6,6" 
+             Margin="6,6,6,6"
              Height="32"
              DockPanel.Dock="Left"/>
       <Label FontSize="18"
              Foreground="White"
              FontWeight="SemiBold"
-             Margin="6,6,0,6" 
+             Margin="6,6,0,6"
              VerticalAlignment="Center"
              Classes="text"
              Content="Avalonia Play" />
@@ -75,7 +76,7 @@
             <MenuItem Header="Save Code As..." Command="{Binding SaveCodeFileCommand}" />
           </MenuItem>
 
-          <MenuItem Header="Run" 
+          <MenuItem Header="Run"
                     Classes="main"
                     Command="{Binding RunCommand}" />
 
@@ -107,15 +108,15 @@
               </Style>
             </MenuItem.Styles>
           </MenuItem>
- 
+
         </Menu>
 
       </StackPanel>
 
     </DockPanel>
 
-    <Button Grid.Row="0" 
-            Grid.Column="2" 
+    <Button Grid.Row="0"
+            Grid.Column="2"
             Classes="main"
             ToolTip.Tip="Gist">
       <Button.Flyout>
@@ -139,17 +140,25 @@
           </DockPanel>
         </Flyout>
       </Button.Flyout>
-      <PathIcon Width="16" Height="16" 
-                Margin="0,0,0,0"
-                Data="{DynamicResource GistIcon}"/>
+
+      <console:OnPlatform>
+        <console:OnPlatform.Default>
+          <PathIcon Width="16" Height="16"
+                  Margin="0,0,0,0"
+                  Data="{DynamicResource GistIcon}"/>
+        </console:OnPlatform.Default>
+        <console:OnPlatform.Console>
+          <TextBlock Text="🐙"/>
+        </console:OnPlatform.Console>
+      </console:OnPlatform>
     </Button>
 
-    <Button Grid.Row="0" 
-            Grid.Column="3" 
+    <Button Grid.Row="0"
+            Grid.Column="3"
             Classes="main"
             ToolTip.Tip="Settings">
       <Button.Flyout>
-        <Flyout ShowMode="TransientWithDismissOnPointerMoveAway" 
+        <Flyout ShowMode="TransientWithDismissOnPointerMoveAway"
                 Placement="BottomEdgeAlignedRight">
           <StackPanel Spacing="12">
             <CheckBox Margin="0,0,0,0"
@@ -164,15 +173,21 @@
           </StackPanel>
         </Flyout>
       </Button.Flyout>
-      <PathIcon Width="16" Height="16" 
+      <console:OnPlatform>
+        <console:OnPlatform.Default>
+          <PathIcon Width="16" Height="16"
                 Margin="0,0,6,0"
                 Data="{DynamicResource SettingsIcon}"/>
+        </console:OnPlatform.Default>
+        <console:OnPlatform.Console>
+          <TextBlock Text="{StaticResource Icon_Settings}"/>
+        </console:OnPlatform.Console>
+      </console:OnPlatform>
     </Button>
 
     <Separator Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4"
                Margin="0,0,0,0"
-               Background="{DynamicResource SystemChromeAltLowColor}" 
-               Opacity="0.3" 
+               Background="{DynamicResource SystemChromeAltLowColor}"
                Height="0.55"/>
   </Grid>
 </UserControl>

@@ -56,8 +56,8 @@ public partial class MainViewModel : ViewModelBase
         }
     }
 
-    public IStorageProvider? StorageProvider { get; set; }
-    
+    public IStorageProvider? StorageProvider => TopLevel.GetTopLevel(null)?.StorageProvider;
+
     public ICommand RunCommand { get; }
 
     public ICommand GistCommand { get; }

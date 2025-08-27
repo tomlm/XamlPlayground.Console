@@ -12,9 +12,4 @@ public partial class MainView : UserControl
         InitializeComponent();
     }
 
-    protected override void OnAttachedToVisualTree(VisualTreeAttachmentEventArgs e)
-    {
-        ((MainViewModel)DataContext!).StorageProvider = TopLevel.GetTopLevel(this)?.StorageProvider;
-        base.OnAttachedToVisualTree(e);
-    }
 }
