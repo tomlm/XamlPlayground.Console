@@ -1,4 +1,4 @@
-<Application xmlns="https://github.com/avaloniaui"
+  <Application xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:console="https://github.com/jinek/consolonia"
              xmlns:local="using:XamlPlayground"
@@ -8,60 +8,6 @@
     <!-- Font Families -->
     <FontFamily x:Key="MonospaceFontFamily">ConsoleDefault(F7D6533C-AC9D-4C4A-884F-7719A9B5DC0C)</FontFamily>
 
-    <!-- Spacing and Layout Dimensions -->
-    <Thickness x:Key="StandardMargin">1</Thickness>
-    <Thickness x:Key="SmallMargin">1</Thickness>
-    <Thickness x:Key="TinyMargin">1</Thickness>
-    <Thickness x:Key="ZeroMargin">0</Thickness>
-    <Thickness x:Key="NoMargin">0,0,0,0</Thickness>
-
-    <!-- Specific Margin Values -->
-    <Thickness x:Key="TabItemMargin">0,0,0,0</Thickness>
-    <Thickness x:Key="LogoMargin">0</Thickness>
-    <Thickness x:Key="HeaderLabelMargin">0</Thickness>
-    <Thickness x:Key="MenuStackMargin">0</Thickness>
-    <Thickness x:Key="MenuItemHeaderMargin">0</Thickness>
-    <Thickness x:Key="PathIconMargin">0</Thickness>
-    <Thickness x:Key="BottomDialogMargin">0</Thickness>
-    <Thickness x:Key="TopDialogMargin">0</Thickness>
-    <Thickness x:Key="RightIconMargin">0</Thickness>
-
-    <!-- Padding Values -->
-    <Thickness x:Key="StandardPadding">1</Thickness>
-    <Thickness x:Key="SmallPadding">1</Thickness>
-    <Thickness x:Key="ZeroPadding">0</Thickness>
-
-    <!-- Border Thickness -->
-    <Thickness x:Key="RightBorderThickness">0,0,1,0</Thickness>
-
-    <!-- Spacing Values -->
-    <x:Double x:Key="StandardSpacing">1</x:Double>
-    <x:Double x:Key="LargeSpacing">1</x:Double>
-
-    <!-- Heights -->
-    <x:Double x:Key="TabItemMinHeight">1</x:Double>
-    <x:Double x:Key="LogoHeight">1</x:Double>
-    <x:Double x:Key="ScreenMinHeight">1</x:Double>
-    <x:Double x:Key="SplitterHeight">1</x:Double>
-    <x:Double x:Key="SeparatorHeight">1</x:Double>
-
-    <!-- Widths -->
-    <x:Double x:Key="SplitterWidth">1</x:Double>
-    <x:Double x:Key="IconSize">1</x:Double>
-    <x:Double x:Key="DialogWidth">1</x:Double>
-    <x:Double x:Key="SettingsMinWidth">1</x:Double>
-    <x:Double x:Key="SeparatorWidth">1</x:Double>
-
-    <!-- Image Dimensions -->
-    <x:Double x:Key="SplashImageMinSize">1</x:Double>
-    <x:Double x:Key="SplashImageMaxSize">1</x:Double>
-
-    <!-- Font Sizes -->
-    <x:Double x:Key="TabFontSize">1</x:Double>
-    <x:Double x:Key="HeaderFontSize">1</x:Double>
-    <x:Double x:Key="ButtonFontSize">1</x:Double>
-    <x:Double x:Key="ScreenFontSize">1</x:Double>
-    <x:Double x:Key="EditorFontSize">1</x:Double>
   </Application.Resources>
 
   <Application.DataTemplates>
