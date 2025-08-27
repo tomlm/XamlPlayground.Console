@@ -4,6 +4,58 @@
              Name="XamlPlayground"
              RequestedThemeVariant="Light"
              x:Class="XamlPlayground.App">
+  <Application.Resources>
+    <!-- Spacing and Margins -->
+    <Thickness x:Key="SmallMargin">6</Thickness>
+    <Thickness x:Key="MediumMargin">12</Thickness>
+    <Thickness x:Key="SmallPadding">6</Thickness>
+    <Thickness x:Key="MediumPadding">8</Thickness>
+    <Thickness x:Key="TabItemMargin">12,2,2,2</Thickness>
+    <Thickness x:Key="LogoMargin">6,6,6,6</Thickness>
+    <Thickness x:Key="TitleMargin">6,6,0,6</Thickness>
+    <Thickness x:Key="HeaderStackMargin">6,0,6,0</Thickness>
+    <Thickness x:Key="HeaderItemMargin">0,4,0,3</Thickness>
+    <Thickness x:Key="PathIconMargin">6,0,0,0</Thickness>
+    <Thickness x:Key="FlyoutLabelMargin">0,0,0,10</Thickness>
+    <Thickness x:Key="FlyoutButtonMargin">0,10,0,0</Thickness>
+    <Thickness x:Key="ButtonMargin">5</Thickness>
+    <Thickness x:Key="ScreenTextMargin">5</Thickness>
+    <Thickness x:Key="ZeroMargin">0</Thickness>
+    
+    <!-- Font Sizes -->
+    <x:Double x:Key="TabItemFontSize">16</x:Double>
+    <x:Double x:Key="TitleFontSize">18</x:Double>
+    <x:Double x:Key="ButtonTextFontSize">20</x:Double>
+    <x:Double x:Key="ScreenTextFontSize">30</x:Double>
+    
+    <!-- Spacing Values -->
+    <x:Double x:Key="SmallSpacing">6</x:Double>
+    <x:Double x:Key="MediumSpacing">12</x:Double>
+    
+    <!-- Heights and Widths -->
+    <x:Double x:Key="TabItemMinHeight">32</x:Double>
+    <x:Double x:Key="LogoHeight">32</x:Double>
+    <x:Double x:Key="IconSize">16</x:Double>
+    <x:Double x:Key="ScreenTextMinHeight">35</x:Double>
+    <x:Double x:Key="SplashImageMinSize">24</x:Double>
+    <x:Double x:Key="SplashImageMaxSize">128</x:Double>
+    <x:Double x:Key="GridSplitterSize">6</x:Double>
+    <x:Double x:Key="SeparatorThickness">0.55</x:Double>
+    <x:Double x:Key="FlyoutWidth">400</x:Double>
+    <x:Double x:Key="PopupMaxHeight">430</x:Double>
+    <x:Double x:Key="SettingsMinWidth">120</x:Double>
+    
+    <!-- Border Thickness -->
+    <Thickness x:Key="TabControlBorderThickness">0,0,1,0</Thickness>
+    
+    <!-- Design Preview Dimensions -->
+    <x:Double x:Key="PreviewWidth">900</x:Double>
+    <x:Double x:Key="PreviewHeight">500</x:Double>
+    
+    <!-- Adaptive Layout Trigger -->
+    <x:Double x:Key="AdaptiveWidthTrigger">900</x:Double>
+  </Application.Resources>
+  
   <Application.DataTemplates>
     <local:ViewLocator />
   </Application.DataTemplates>

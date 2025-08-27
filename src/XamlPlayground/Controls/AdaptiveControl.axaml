@@ -4,7 +4,7 @@
         xmlns:i="clr-namespace:Avalonia.Xaml.Interactivity;assembly=Avalonia.Xaml.Interactivity"
         xmlns:ir="clr-namespace:Avalonia.Xaml.Interactions.Responsive;assembly=Avalonia.Xaml.Interactions.Responsive">
   <Design.PreviewWith>
-    <c:AdaptiveControl Width="900" Height="500">
+    <c:AdaptiveControl Width="{StaticResource PreviewWidth}" Height="{StaticResource PreviewHeight}">
       <c:AdaptiveControl.Header>
         <Rectangle Fill="Red" />
       </c:AdaptiveControl.Header>
@@ -16,9 +16,6 @@
       </c:AdaptiveControl.Right>
     </c:AdaptiveControl>
   </Design.PreviewWith>
-  <Styles.Resources>
-    <x:Double x:Key="WidthTrigger">900</x:Double>
-  </Styles.Resources>
   <Style Selector="c|AdaptiveControl">
     <Setter Property="Template">
       <ControlTemplate>
@@ -43,8 +40,8 @@
               </ContentPresenter.Styles>
               <i:Interaction.Behaviors>
                 <ir:AdaptiveBehavior SourceControl="{Binding #PART_DockPanel}">
-                  <ir:AdaptiveClassSetter MinWidth="0" MaxWidth="{DynamicResource WidthTrigger}" ClassName="vertical" />
-                  <ir:AdaptiveClassSetter MinWidth="{DynamicResource WidthTrigger}" MaxWidth="Infinity" ClassName="horizontal" />
+                  <ir:AdaptiveClassSetter MinWidth="0" MaxWidth="{StaticResource AdaptiveWidthTrigger}" ClassName="vertical" />
+                  <ir:AdaptiveClassSetter MinWidth="{StaticResource AdaptiveWidthTrigger}" MaxWidth="Infinity" ClassName="horizontal" />
                 </ir:AdaptiveBehavior>
               </i:Interaction.Behaviors>
             </ContentPresenter>
@@ -53,7 +50,7 @@
                 <Style Selector="GridSplitter.horizontal">
                   <Setter Property="ResizeBehavior" Value="PreviousAndNext" />
                   <Setter Property="ResizeDirection" Value="Columns" />
-                  <Setter Property="Width" Value="6" />
+                  <Setter Property="Width" Value="{StaticResource GridSplitterSize}" />
                   <Setter Property="(Grid.Column)" Value="1" />
                   <Setter Property="(Grid.Row)" Value="0" />
                   <Setter Property="(Grid.RowSpan)" Value="3" />
@@ -62,8 +59,8 @@
                       <ControlTemplate>
                         <Border Background="Transparent">
                           <Separator Background="{DynamicResource SystemChromeAltLowColor}" 
-                                     Margin="0,0,0,0"
-                                     Width="0.55"
+                                     Margin="{StaticResource ZeroMargin}"
+                                     Width="{StaticResource SeparatorThickness}"
                                      HorizontalAlignment="Stretch"
                                      VerticalAlignment="Stretch"/>
                         </Border>
@@ -74,7 +71,7 @@
                 <Style Selector="GridSplitter.vertical">
                   <Setter Property="ResizeBehavior" Value="PreviousAndNext" />
                   <Setter Property="ResizeDirection" Value="Rows" />
-                  <Setter Property="Height" Value="6" />
+                  <Setter Property="Height" Value="{StaticResource GridSplitterSize}" />
                   <Setter Property="(Grid.Column)" Value="0" />
                   <Setter Property="(Grid.ColumnSpan)" Value="3" />
                   <Setter Property="(Grid.Row)" Value="1" />
@@ -83,8 +80,8 @@
                       <ControlTemplate>
                         <Border Background="Transparent">
                           <Separator Background="{DynamicResource SystemChromeAltLowColor}" 
-                                     Margin="0,0,0,0"
-                                     Height="0.55"
+                                     Margin="{StaticResource ZeroMargin}"
+                                     Height="{StaticResource SeparatorThickness}"
                                      HorizontalAlignment="Stretch"
                                      VerticalAlignment="Stretch"/>
                         </Border>
@@ -95,8 +92,8 @@
               </GridSplitter.Styles>
               <i:Interaction.Behaviors>
                 <ir:AdaptiveBehavior SourceControl="{Binding #PART_DockPanel}">
-                  <ir:AdaptiveClassSetter MinWidth="0" MaxWidth="{DynamicResource WidthTrigger}" ClassName="vertical" />
-                  <ir:AdaptiveClassSetter MinWidth="{DynamicResource WidthTrigger}" MaxWidth="Infinity" ClassName="horizontal" />
+                  <ir:AdaptiveClassSetter MinWidth="0" MaxWidth="{StaticResource AdaptiveWidthTrigger}" ClassName="vertical" />
+                  <ir:AdaptiveClassSetter MinWidth="{StaticResource AdaptiveWidthTrigger}" MaxWidth="Infinity" ClassName="horizontal" />
                 </ir:AdaptiveBehavior>
               </i:Interaction.Behaviors>
             </GridSplitter>
@@ -116,8 +113,8 @@
               </ContentPresenter.Styles>
               <i:Interaction.Behaviors>
                 <ir:AdaptiveBehavior SourceControl="{Binding #PART_DockPanel}">
-                  <ir:AdaptiveClassSetter MinWidth="0" MaxWidth="{DynamicResource WidthTrigger}" ClassName="vertical" />
-                  <ir:AdaptiveClassSetter MinWidth="{DynamicResource WidthTrigger}" MaxWidth="Infinity" ClassName="horizontal" />
+                  <ir:AdaptiveClassSetter MinWidth="0" MaxWidth="{StaticResource AdaptiveWidthTrigger}" ClassName="vertical" />
+                  <ir:AdaptiveClassSetter MinWidth="{StaticResource AdaptiveWidthTrigger}" MaxWidth="Infinity" ClassName="horizontal" />
                 </ir:AdaptiveBehavior>
               </i:Interaction.Behaviors>
             </ContentPresenter>
