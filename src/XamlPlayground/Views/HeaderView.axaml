@@ -52,10 +52,18 @@
 
     <DockPanel Grid.Row="0" Grid.Column="0">
 
-      <Image Source="/Assets/Logo.png"
-             Margin="6,6,6,6"
-             Height="32"
-             DockPanel.Dock="Left"/>
+      <console:OnPlatform>
+        <console:OnPlatform.Default>
+          <Image Source="/Assets/Logo.png"
+                 Margin="6,6,6,6"
+                 Height="32"
+                 DockPanel.Dock="Left"/>
+        </console:OnPlatform.Default>
+        <console:OnPlatform.Console>
+          <TextBlock Text="@"/>
+        </console:OnPlatform.Console>
+      </console:OnPlatform>
+
       <Label FontSize="18"
              Foreground="White"
              FontWeight="SemiBold"

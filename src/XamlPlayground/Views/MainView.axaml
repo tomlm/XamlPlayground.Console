@@ -46,14 +46,7 @@
             </Animation>
           </console:OnPlatform.Default>
           <console:OnPlatform.Console>
-            <Animation Delay="0:0:0" Duration="0:0:2" Easing="QuadraticEaseInOut" FillMode="Both">
-              <KeyFrame Cue="0%">
-                <Setter Property="IsVisible" Value="True" />
-              </KeyFrame>
-              <KeyFrame Cue="100%">
-                <Setter Property="IsVisible" Value="False" />
-              </KeyFrame>
-            </Animation>
+            <Animation Delay="0:0:0" Duration="0:0:2" Easing="QuadraticEaseInOut" FillMode="Both"/>
           </console:OnPlatform.Console>
         </console:OnPlatform>
       </Style.Animations>
@@ -81,7 +74,9 @@
               </KeyFrame>
             </Animation>
           </console:OnPlatform.Default>
-          <console:OnPlatform.Console/>
+          <console:OnPlatform.Console>
+            <Animation/>
+          </console:OnPlatform.Console>
         </console:OnPlatform>
       </Style.Animations>
     </Style>
@@ -113,24 +108,7 @@
             </Animation>
           </console:OnPlatform.Default>
           <console:OnPlatform.Console>
-            <Animation Delay="0:0:2" Duration="0:0:1" Easing="QuadraticEaseInOut" FillMode="Both">
-              <KeyFrame Cue="0%">
-                <Setter Property="(ScaleTransform.ScaleX)" Value="0.7" />
-                <Setter Property="(ScaleTransform.ScaleY)" Value="0.7" />
-              </KeyFrame>
-              <KeyFrame Cue="20%">
-                <Setter Property="(ScaleTransform.ScaleX)" Value="1" />
-                <Setter Property="(ScaleTransform.ScaleY)" Value="1" />
-              </KeyFrame>
-              <KeyFrame Cue="80%">
-                <Setter Property="(ScaleTransform.ScaleX)" Value="1" />
-                <Setter Property="(ScaleTransform.ScaleY)" Value="1" />
-              </KeyFrame>
-              <KeyFrame Cue="100%">
-                <Setter Property="(ScaleTransform.ScaleX)" Value="1" />
-                <Setter Property="(ScaleTransform.ScaleY)" Value="1" />
-              </KeyFrame>
-            </Animation>
+            <Animation/>
           </console:OnPlatform.Console>
         </console:OnPlatform>
 
