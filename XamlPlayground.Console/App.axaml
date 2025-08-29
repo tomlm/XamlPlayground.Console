@@ -1,26 +1,98 @@
-  <Application xmlns="https://github.com/avaloniaui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:console="https://github.com/jinek/consolonia"
-             xmlns:local="using:XamlPlayground"
-             x:Class="XamlPlayground.Console.App"
-             RequestedThemeVariant="Default">
+<Application xmlns="https://github.com/avaloniaui"
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+           xmlns:console="https://github.com/jinek/consolonia"
+           xmlns:local="using:XamlPlayground"
+           xmlns:ae="clr-namespace:AvaloniaEdit;assembly=AvaloniaEdit"
+           xmlns:aedit="clr-namespace:AvaloniaEdit.Editing;assembly=AvaloniaEdit"
+           xmlns:arender="clr-namespace:AvaloniaEdit.Rendering;assembly=AvaloniaEdit"
+           x:Class="XamlPlayground.Console.App"
+           RequestedThemeVariant="Default">
   <Application.Resources>
-    <!-- Font Families -->
-    <FontFamily x:Key="MonospaceFontFamily">ConsoleDefault(F7D6533C-AC9D-4C4A-884F-7719A9B5DC0C)</FontFamily>
+    <!-- Spacing and Margins -->
+    <Thickness x:Key="SmallMargin">0</Thickness>
+    <Thickness x:Key="MediumMargin">0</Thickness>
+    <Thickness x:Key="SmallPadding">0</Thickness>
+    <Thickness x:Key="MediumPadding">0</Thickness>
+    <Thickness x:Key="TabItemMargin">0</Thickness>
+    <Thickness x:Key="LogoMargin">0</Thickness>
+    <Thickness x:Key="TitleMargin">0</Thickness>
+    <Thickness x:Key="HeaderStackMargin">0</Thickness>
+    <Thickness x:Key="HeaderItemMargin">0</Thickness>
+    <Thickness x:Key="PathIconMargin">0</Thickness>
+    <Thickness x:Key="FlyoutLabelMargin">0</Thickness>
+    <Thickness x:Key="FlyoutButtonMargin">0</Thickness>
+    <Thickness x:Key="ButtonMargin">0</Thickness>
+    <Thickness x:Key="ScreenTextMargin">0</Thickness>
+    <Thickness x:Key="ZeroMargin">0</Thickness>
 
+    <!-- Font Sizes -->
+    <x:Double x:Key="TabItemFontSize">1</x:Double>
+    <x:Double x:Key="TitleFontSize">1</x:Double>
+    <x:Double x:Key="ButtonTextFontSize">1</x:Double>
+    <x:Double x:Key="ScreenTextFontSize">1</x:Double>
+    <x:Double x:Key="ControlContentThemeFontSize">1</x:Double>
+    <x:Double x:Key="EditorFontSize">0.7407407407407407</x:Double>
+
+    <!-- Spacing Values -->
+    <x:Double x:Key="SmallSpacing">1</x:Double>
+    <x:Double x:Key="MediumSpacing">1</x:Double>
+
+    <!-- Heights and Widths -->
+    <x:Double x:Key="TabItemMinHeight">1</x:Double>
+    <x:Double x:Key="LogoHeight">1</x:Double>
+    <x:Double x:Key="IconSize">1</x:Double>
+    <x:Double x:Key="ScreenTextMinHeight">1</x:Double>
+    <x:Double x:Key="SplashImageMinSize">1</x:Double>
+    <x:Double x:Key="SplashImageMaxSize">1</x:Double>
+    <x:Double x:Key="GridSplitterSize">1</x:Double>
+    <x:Double x:Key="SeparatorThickness">1</x:Double>
+    <x:Double x:Key="FlyoutWidth">40</x:Double>
+    <x:Double x:Key="PopupMaxHeight">43</x:Double>
+    <x:Double x:Key="SettingsMinWidth">12</x:Double>
+
+    <!-- Border Thickness -->
+    <Thickness x:Key="TabControlBorderThickness">0,0,1,0</Thickness>
+
+    <!-- Design Preview Dimensions -->
+    <x:Double x:Key="PreviewWidth">90</x:Double>
+    <x:Double x:Key="PreviewHeight">50</x:Double>
+
+    <!-- Adaptive Layout Trigger -->
+    <x:Double x:Key="AdaptiveWidthTrigger">90</x:Double>
   </Application.Resources>
 
   <Application.DataTemplates>
     <local:ViewLocator />
   </Application.DataTemplates>
-
   <Application.Styles>
-    <SimpleTheme/>
+    <SimpleTheme />
+
+    <console:ModernTheme />
 
     <StyleInclude Source="avares://AvaloniaEdit/Themes/Simple/AvaloniaEdit.xaml" />
     <StyleInclude Source="avares://XamlPlayground/Controls/AdaptiveControl.axaml" />
-    
-    <console:ModernTheme />
+    <Style Selector="Label.text > AccessText">
+      <Setter Property="ClipToBounds" Value="False" />
+      <Setter Property="TextWrapping" Value="Wrap" />
+    </Style>
 
-  </Application.Styles>
+    <Style Selector="Label">
+      <Setter Property="Padding" Value="0 0 1 0" />
+    </Style>
+
+    <Style Selector="arender|TextView">
+      <Setter Property="CurrentLineBorder">
+        <Pen Thickness="0" Brush="Transparent"/>
+      </Setter>
+    </Style>
+    <Style Selector="aedit|TextArea">
+      <Setter Property="SelectionBorder" >
+        <Pen Thickness="0" Brush="Transparent"/>
+      </Setter>
+      <Setter Property="SelectionCornerRadius" Value="0"/>
+    </Style>
+    <Style Selector="ae|TextEditor">
+      <Setter Property="FontSize" Value="0.7407407407407407"/>
+    </Style>
+   </Application.Styles>
 </Application>

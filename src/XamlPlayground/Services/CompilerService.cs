@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
@@ -36,7 +37,7 @@ public static class CompilerService
                 // BaseAddress = new Uri(BaseUri)
             };
 
-            Console.WriteLine($"Loading references BaseUri: {BaseUri}");
+            Debug.WriteLine($"Loading references BaseUri: {BaseUri}");
 
             foreach(var reference in assemblies.Where(x => !x.IsDynamic))
             {
@@ -44,13 +45,13 @@ public static class CompilerService
                 {
                     var name = reference.GetName().Name;
                     var requestUri = $"{BaseUri}managed/{name}.dll";
-                    Console.WriteLine($"Loading reference requestUri: {requestUri}, FullName: {reference.FullName}");
+                    Debug.WriteLine($"Loading reference requestUri: {requestUri}, FullName: {reference.FullName}");
                     var stream = await client.GetStreamAsync(requestUri);
                     appDomainReferences.Add(MetadataReference.CreateFromStream(stream));
                 }
                 catch (Exception exception)
                 {
-                    Console.WriteLine(exception);
+                    Debug.WriteLine(exception);
                 }
             }
 
@@ -89,7 +90,7 @@ public static class CompilerService
         {
             foreach (var error in errors)
             {
-                Console.WriteLine(error);
+                Debug.WriteLine(error);
             }
 
             return (null, null);

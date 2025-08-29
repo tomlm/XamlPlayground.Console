@@ -23,6 +23,7 @@
         </DrawingImage>
       </Style.Resources>
     </Style>
+    <!--
     <Style Selector="Panel.splashContent">
 
       <Style.Animations>
@@ -114,7 +115,7 @@
 
       </Style.Animations>
     </Style>
-
+-->
     <Style Selector="Button">
       <Setter Property="Margin" Value="{StaticResource ButtonMargin}" />
     </Style>
@@ -136,12 +137,12 @@
 
   <Panel>
     <Panel Classes="mainContent">
-      <Panel.RenderTransform>
+      <!--<Panel.RenderTransform>
         <TransformGroup>
           <ScaleTransform />
           <TranslateTransform />
         </TransformGroup>
-      </Panel.RenderTransform>
+      </Panel.RenderTransform>-->
       <c:AdaptiveControl>
         <c:AdaptiveControl.Header>
           <views:HeaderView />

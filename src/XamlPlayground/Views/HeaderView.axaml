@@ -70,9 +70,13 @@
              Margin="{StaticResource TitleMargin}"
              VerticalAlignment="Center"
              Classes="text"
-             Content="Avalonia Play" />
+             Content="Avalonia Playground" />
 
-      <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Spacing="{StaticResource SmallSpacing}" Margin="{StaticResource HeaderStackMargin}">
+
+      <StackPanel Orientation="Horizontal"
+                  VerticalAlignment="Center"
+                  Spacing="{StaticResource SmallSpacing}"
+                  Margin="{StaticResource HeaderStackMargin}">
 
         <Menu VerticalAlignment="Center">
 
@@ -88,7 +92,7 @@
                     Classes="main"
                     Command="{Binding RunCommand}" />
 
-          <MenuItem CornerRadius="3"
+          <MenuItem
                     Classes="main popup"
                     ItemsSource="{Binding Samples}">
             <MenuItem.Header>
@@ -96,24 +100,35 @@
                           Margin="{StaticResource HeaderItemMargin}">
                 <Label Content="Samples"
                        Classes="text" />
-                <Path Data="M 0 0 L 7 7 L 14 0"
-                      HorizontalAlignment="Center"
-                      VerticalAlignment="Center"
-                      Stretch="None"
-                      Stroke="{DynamicResource SystemAltHighColor}"
-                      StrokeThickness="1"
-                      Margin="{StaticResource PathIconMargin}"/>
+                <console:OnPlatform>
+                  <console:OnPlatform.Default>
+                    <Path Data="M 0 0 L 7 7 L 14 0"
+                          HorizontalAlignment="Center"
+                          VerticalAlignment="Center"
+                          Stretch="None"
+                          Stroke="{DynamicResource SystemAltHighColor}"
+                          StrokeThickness="1"
+                          Margin="{StaticResource PathIconMargin}"/>
+                  </console:OnPlatform.Default>
+                  <console:OnPlatform.Console>
+                    <TextBlock Text="{StaticResource Icon_ChevronDown}"/>
+                  </console:OnPlatform.Console>
+                </console:OnPlatform>
               </StackPanel>
             </MenuItem.Header>
             <MenuItem.Styles>
               <Style Selector="MenuItem > MenuItem" x:DataType="vm:SampleViewModel">
+
                 <Setter Property="Padding" Value="{StaticResource SmallPadding}"/>
+
                 <Setter Property="Header" Value="{Binding Name}"/>
                 <Setter Property="Command" Value="{Binding OpenCommand}"/>
               </Style>
+
               <Style Selector="MenuItem.popup /template/ Popup#PART_Popup" x:DataType="vm:SampleViewModel">
                 <Setter Property="MaxHeight" Value="{StaticResource PopupMaxHeight}"/>
               </Style>
+
             </MenuItem.Styles>
           </MenuItem>
 
@@ -160,7 +175,6 @@
         </console:OnPlatform.Console>
       </console:OnPlatform>
     </Button>
-
     <Button Grid.Row="0"
             Grid.Column="3"
             Classes="main"
@@ -172,12 +186,21 @@
             <CheckBox Margin="{StaticResource ZeroMargin}"
                       Content="Live Preview"
                       IsChecked="{Binding EnableAutoRun}" />
-            <Label Content="Font size:" />
-            <NumericUpDown Value="{Binding EditorFontSize, Mode=TwoWay}"
-                           Increment="1"
-                           Minimum="1"
-                           Watermark="Font size"
-                           MinWidth="{StaticResource SettingsMinWidth}"/>
+            <console:OnPlatform>
+              <console:OnPlatform.Default>
+                <StackPanel Orientation="Horizontal">
+                  <Label Content="Font size:" />
+                  <NumericUpDown Value="{Binding EditorFontSize, Mode=TwoWay}"
+                                 Increment="1"
+                                 Minimum="1"
+                                 Watermark="Font size"
+                                 MinWidth="{StaticResource SettingsMinWidth}"/>
+                </StackPanel>
+              </console:OnPlatform.Default>
+              <console:OnPlatform.Console>
+                <TextBlock/>
+              </console:OnPlatform.Console>
+            </console:OnPlatform>
           </StackPanel>
         </Flyout>
       </Button.Flyout>
@@ -194,6 +217,7 @@
     </Button>
 
     <Separator Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4"
+               IsVisible="{console:OnPlatform true, Console=false}"
                Margin="{StaticResource ZeroMargin}"
                Background="{DynamicResource SystemChromeAltLowColor}"
                Height="{StaticResource SeparatorThickness}"/>

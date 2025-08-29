@@ -16,6 +16,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using XamlPlayground.Services;
 using Avalonia.Threading;
+using System.Diagnostics;
 
 namespace XamlPlayground.ViewModels;
 
@@ -26,7 +27,7 @@ public partial class MainViewModel : ViewModelBase
     [ObservableProperty] private Control? _control;
     [ObservableProperty] private bool _enableAutoRun;
     [ObservableProperty] private string? _lastErrorMessage;
-    [ObservableProperty] private int _editorFontSize;
+    [ObservableProperty] private double _editorFontSize;
     private bool _update;
     private (Assembly? Assembly, AssemblyLoadContext? Context)? _previous;
     private IStorageFile? _openXamlFile;
@@ -35,7 +36,10 @@ public partial class MainViewModel : ViewModelBase
 
     public MainViewModel(string? initialGist)
     {
-        _editorFontSize = 12;
+        if (App.Current.ApplicationLifetime.GetType().Name.Contains("Consolonia"))
+            _editorFontSize = 1/1.35f;
+        else
+            _editorFontSize = 12;
         _samples = GetSamples(".xml");
         _enableAutoRun = true;
 
@@ -52,7 +56,7 @@ public partial class MainViewModel : ViewModelBase
         }
         else
         {
-            CurrentSample = _samples.FirstOrDefault(x => x.Name == "Demo");
+//CurrentSample = _samples.FirstOrDefault(x => x.Name == "Demo");
         }
     }
 
@@ -110,7 +114,7 @@ public partial class MainViewModel : ViewModelBase
         }
         catch (Exception exception)
         {
-            Console.WriteLine(exception);
+            Debug.WriteLine(exception);
         }
     }
 
@@ -239,7 +243,7 @@ public partial class MainViewModel : ViewModelBase
                     if (_previous?.Assembly is { })
                     {
                         scriptAssembly = _previous?.Assembly;
-                        Console.WriteLine($"Compiled assembly: {scriptAssembly?.GetName().Name}");
+                        Debug.WriteLine($"Compiled assembly: {scriptAssembly?.GetName().Name}");
                     }
                     else
                     {
@@ -249,7 +253,7 @@ public partial class MainViewModel : ViewModelBase
                 catch (Exception exception)
                 {
                     LastErrorMessage = exception.Message;
-                    Console.WriteLine(exception);
+                    Debug.WriteLine(exception);
                     return;
                 }
             }
@@ -289,7 +293,7 @@ public partial class MainViewModel : ViewModelBase
         catch (Exception exception)
         {
             LastErrorMessage = exception.Message;
-            Console.WriteLine(exception);
+            Debug.WriteLine(exception);
         }
         finally
         {
@@ -331,7 +335,7 @@ public partial class MainViewModel : ViewModelBase
             }
             catch (Exception exception)
             {
-                Console.WriteLine(exception);
+                Debug.WriteLine(exception);
             }
         }
     }
@@ -370,7 +374,7 @@ public partial class MainViewModel : ViewModelBase
                 }
                 catch (Exception exception)
                 {
-                    Console.WriteLine(exception);
+                    Debug.WriteLine(exception);
                 }
             }
         }
@@ -415,7 +419,7 @@ public partial class MainViewModel : ViewModelBase
             }
             catch (Exception exception)
             {
-                Console.WriteLine(exception);
+                Debug.WriteLine(exception);
             }
         }
     }
@@ -454,7 +458,7 @@ public partial class MainViewModel : ViewModelBase
                 }
                 catch (Exception exception)
                 {
-                    Console.WriteLine(exception);
+                    Debug.WriteLine(exception);
                 }
             }
         }

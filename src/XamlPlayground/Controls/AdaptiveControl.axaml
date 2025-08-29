@@ -21,8 +21,8 @@
       <ControlTemplate>
         <DockPanel Name="PART_DockPanel">
           <ContentPresenter Name="PART_HeaderContentPresenter"
-                            Content="{TemplateBinding Header}" 
-                            DockPanel.Dock="Top" /> 
+                            Content="{TemplateBinding Header}"
+                            DockPanel.Dock="Top" />
           <Grid ColumnDefinitions="50*,Auto,50*" RowDefinitions="*,Auto,*">
             <ContentPresenter Name="PART_LeftContentPresenter"
                               Content="{TemplateBinding Left}">
@@ -58,7 +58,7 @@
                     <Setter.Value>
                       <ControlTemplate>
                         <Border Background="Transparent">
-                          <Separator Background="{DynamicResource SystemChromeAltLowColor}" 
+                          <Separator Background="{DynamicResource SystemChromeAltLowColor}"
                                      Margin="{StaticResource ZeroMargin}"
                                      Width="{StaticResource SeparatorThickness}"
                                      HorizontalAlignment="Stretch"
@@ -79,7 +79,7 @@
                     <Setter.Value>
                       <ControlTemplate>
                         <Border Background="Transparent">
-                          <Separator Background="{DynamicResource SystemChromeAltLowColor}" 
+                          <Separator Background="{DynamicResource SystemChromeAltLowColor}"
                                      Margin="{StaticResource ZeroMargin}"
                                      Height="{StaticResource SeparatorThickness}"
                                      HorizontalAlignment="Stretch"
