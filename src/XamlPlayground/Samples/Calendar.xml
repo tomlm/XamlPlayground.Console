@@ -1,14 +1,14 @@
 ﻿<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-  <StackPanel Orientation="Vertical" Spacing="4">
+  <StackPanel Orientation="Vertical" Spacing="1">
     <TextBlock Classes="h2">A calendar control for selecting dates</TextBlock>
 
-    <WrapPanel MaxWidth="660"
+    <WrapPanel MaxWidth="66"
                HorizontalAlignment="Center"
-               Margin="-8, 0">
+               Margin="-1, 0">
       <WrapPanel.Styles>
         <Style Selector="StackPanel">
-          <Setter Property="Margin" Value="8" />
+          <Setter Property="Margin" Value="1" />
         </Style>
       </WrapPanel.Styles>
       <StackPanel>

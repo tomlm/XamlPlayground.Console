@@ -12,7 +12,7 @@
                    PlaybackDirection="Normal"
                    Easing="{DynamicResource SpringEasing}">
           <KeyFrame Cue="0%" KeySpline="">
-            <Setter Property="TranslateTransform.X" Value="-300"/>
+            <Setter Property="TranslateTransform.X" Value="-30"/>
           </KeyFrame>
           <KeyFrame Cue="100%">
             <Setter Property="TranslateTransform.X" Value="0" />
@@ -22,7 +22,7 @@
     </Style>
   </UserControl.Styles>
   <Grid>
-    <Border Classes="spring" Background="Red" Width="50" Height="50">
+    <Border Classes="spring" Background="Red" Width="5" Height="5">
       <Border.RenderTransform>
         <TransformGroup>
           <TranslateTransform />

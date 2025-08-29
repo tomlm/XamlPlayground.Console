@@ -3,23 +3,23 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:sys="clr-namespace:System;assembly=System.Private.CoreLib"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450">
-  <StackPanel Orientation="Vertical" Spacing="4" HorizontalAlignment="Stretch">
-    <TextBlock Name="DatePickerDesc" Classes="h2" TextWrapping="Wrap"/>
-    <TextBlock Name="TimePickerDesc" Classes="h2" TextWrapping="Wrap"/>
+             mc:Ignorable="d" d:DesignWidth="80" d:DesignHeight="45">
+  <StackPanel Orientation="Vertical" Spacing="1" HorizontalAlignment="Stretch">
+    <TextBlock Name="DatePickerDesc" Classes="h2" TextWrapping="Wrap" />
+    <TextBlock Name="TimePickerDesc" Classes="h2" TextWrapping="Wrap" />
 
     <StackPanel Orientation="Vertical"
-                Margin="16"
+                Margin="2"
                 HorizontalAlignment="Stretch"
-                Spacing="16">
-      <TextBlock FontSize="18">A simple DatePicker</TextBlock>
+                Spacing="2">
+      <TextBlock >A simple DatePicker</TextBlock>
       <StackPanel Orientation="Vertical">
         <Border BorderBrush="{DynamicResource SystemControlHighlightBaseLowBrush}"
-                BorderThickness="1" Padding="15">
+                BorderThickness="1" Padding="2">
           <DatePicker/>
         </Border>
         <Panel Background="{DynamicResource SystemControlBackgroundBaseLowBrush}">
-          <TextBlock Padding="15">
+          <TextBlock Padding="2" >
             <TextBlock.Text>
               <x:String>
                 &lt;DatePicker Header="Pick a date" /&gt;
@@ -31,7 +31,7 @@
 
 
       <Border BorderBrush="{DynamicResource SystemControlHighlightBaseLowBrush}"
-              BorderThickness="1" Padding="15">
+              BorderThickness="1" Padding="2">
         <DatePicker>
           <DataValidationErrors.Error>
             <sys:Exception />
@@ -39,15 +39,15 @@
         </DatePicker>
       </Border>
 
-      <TextBlock FontSize="18">A DatePicker with day formatted and year hidden.</TextBlock>
+      <TextBlock >A DatePicker with day formatted and year hidden.</TextBlock>
       <StackPanel Orientation="Vertical">
         <Border BorderBrush="{DynamicResource SystemControlHighlightBaseLowBrush}"
-                BorderThickness="1" Padding="15">
+                BorderThickness="1" Padding="2">
           <DatePicker x:Name="Control2" DayFormat="d (ddd)"
                       YearVisible="False" />
         </Border>
         <Panel Background="{DynamicResource SystemControlBackgroundBaseLowBrush}">
-          <TextBlock Padding="15">
+          <TextBlock Padding="2" >
             <TextBlock.Text>
               <x:String>
                 &lt;DatePicker DayFormat="d (ddd)" YearVisible="False" /&gt;
@@ -57,16 +57,16 @@
         </Panel>
       </StackPanel>
 
-      <Border Background="{DynamicResource SystemControlHighlightBaseLowBrush}" BorderThickness="1" Margin="15" />
+      <Border Background="{DynamicResource SystemControlHighlightBaseLowBrush}" BorderThickness="1" Margin="2" />
 
-      <TextBlock FontSize="18">A simple TimePicker.</TextBlock>
+      <TextBlock >A simple TimePicker.</TextBlock>
       <StackPanel Orientation="Vertical">
         <Border BorderBrush="{DynamicResource SystemControlHighlightBaseLowBrush}"
-                BorderThickness="1" Padding="15">
+                BorderThickness="1" Padding="2">
           <TimePicker />
         </Border>
         <Panel Background="{DynamicResource SystemControlBackgroundBaseLowBrush}">
-          <TextBlock Padding="15">
+          <TextBlock Padding="2" >
             <TextBlock.Text>
               <x:String>
                 &lt;TimePicker /&gt;
@@ -77,7 +77,7 @@
       </StackPanel>
 
       <Border BorderBrush="{DynamicResource SystemControlHighlightBaseLowBrush}"
-              BorderThickness="1" Padding="15">
+              BorderThickness="1" Padding="2">
         <TimePicker>
           <DataValidationErrors.Error>
             <sys:Exception />
@@ -85,14 +85,14 @@
         </TimePicker>
       </Border>
 
-      <TextBlock FontSize="18">A TimePicker with a header and minute increments specified.</TextBlock>
+      <TextBlock >A TimePicker with a header and minute increments specified.</TextBlock>
       <StackPanel Orientation="Vertical">
         <Border BorderBrush="{DynamicResource SystemControlHighlightBaseLowBrush}"
-                BorderThickness="1" Padding="15">
+                BorderThickness="1" Padding="2">
           <TimePicker MinuteIncrement="15" />
         </Border>
         <Panel Background="{DynamicResource SystemControlBackgroundBaseLowBrush}">
-          <TextBlock Padding="15">
+          <TextBlock Padding="2" >
             <TextBlock.Text>
               <x:String>
                 &lt;TimePicker Header="Arrival time" MinuteIncrement="15" /&gt;
@@ -102,14 +102,14 @@
         </Panel>
       </StackPanel>
 
-      <TextBlock FontSize="18">A TimePicker using a 12-hour clock.</TextBlock>
+      <TextBlock >A TimePicker using a 12-hour clock.</TextBlock>
       <StackPanel Orientation="Vertical">
         <Border BorderBrush="{DynamicResource SystemControlHighlightBaseLowBrush}"
-                BorderThickness="1" Padding="15">
+                BorderThickness="1" Padding="2">
           <TimePicker ClockIdentifier="12HourClock" />
         </Border>
         <Panel Background="{DynamicResource SystemControlBackgroundBaseLowBrush}">
-          <TextBlock Padding="15">
+          <TextBlock Padding="2" >
             <TextBlock.Text>
               <x:String>
                 &lt;TimePicker ClockIdentifier="12HourClock" Header="12 hour clock" /&gt;
@@ -119,14 +119,14 @@
         </Panel>
       </StackPanel>
 
-      <TextBlock FontSize="18">A TimePicker using a 24-hour clock.</TextBlock>
+      <TextBlock >A TimePicker using a 24-hour clock.</TextBlock>
       <StackPanel Orientation="Vertical">
         <Border BorderBrush="{DynamicResource SystemControlHighlightBaseLowBrush}"
-                BorderThickness="1" Padding="15">
+                BorderThickness="1" Padding="2">
           <TimePicker ClockIdentifier="24HourClock" />
         </Border>
         <Panel Background="{DynamicResource SystemControlBackgroundBaseLowBrush}">
-          <TextBlock Padding="15">
+          <TextBlock Padding="2" >
             <TextBlock.Text>
               <x:String>
                 &lt;TimePicker ClockIdentifier="24HourClock" Header="24 hour clock" /&gt;

@@ -4,6 +4,8 @@
   <UserControl.Styles>
     <Style>
       <Style.Resources>
+        <!-- Complex geometry commented out for console layout -->
+        <!--
         <DrawingGroup x:Key="Bulb">
           <DrawingGroup.Transform>
             <MatrixTransform Matrix="1,0,0,1,0,-1028.4" />
@@ -36,105 +38,96 @@
           <GeometryDrawing Brush="#FF7F8C8D"
                            Geometry="F1 M9,1046.4 L9,1047.4 12,1047.4 12,1046.4 9,1046.4 z M9,1048.4 L9,1049.4 12,1049.4 12,1048.4 9,1048.4 z" />
         </DrawingGroup>
+        -->
+        <SolidColorBrush x:Key="Bulb" Color="Yellow" />
       </Style.Resources>
     </Style>
   </UserControl.Styles>
   <Grid RowDefinitions="Auto,Auto,Auto"
         ColumnDefinitions="Auto,Auto,Auto,Auto">
     <TextBlock Text="None"
-               Margin="3" />
+               Margin="1"
+                />
     <Border Grid.Column="0"
             Grid.Row="1"
             VerticalAlignment="Top"
             HorizontalAlignment="Left"
             BorderThickness="1"
             BorderBrush="Gray"
-            Margin="5">
-      <Image>
-        <Image.Source>
-          <DrawingImage Drawing="{DynamicResource Bulb}" />
-        </Image.Source>
-      </Image>
+            Margin="1">
+      <!-- Complex drawing replaced with simple rectangle -->
+      <Rectangle Width="5" Height="5" Fill="Yellow" />
     </Border>
     <TextBlock Text="Fill"
-               Margin="3"
-               Grid.Column="1" />
+               Margin="1"
+               Grid.Column="1"
+                />
     <Border Grid.Column="1"
             Grid.Row="1"
             VerticalAlignment="Top"
             HorizontalAlignment="Left"
             BorderThickness="1"
             BorderBrush="Gray"
-            Margin="5">
-      <Image Width="100" Height="50" Stretch="Fill">
-        <Image.Source>
-          <DrawingImage Drawing="{DynamicResource Bulb}" />
-        </Image.Source>
-      </Image>
+            Margin="1">
+      <Rectangle Width="10" Height="5" Fill="Yellow" />
     </Border>
     <TextBlock Text="Uniform"
-               Margin="3"
-               Grid.Column="2" />
+               Margin="1"
+               Grid.Column="2"
+                />
     <Border Grid.Column="2"
             Grid.Row="1"
             VerticalAlignment="Top"
             HorizontalAlignment="Left"
             BorderThickness="1"
             BorderBrush="Gray"
-            Margin="5">
-      <Image Width="100" Height="50" Stretch="Uniform">
-        <Image.Source>
-          <DrawingImage Drawing="{DynamicResource Bulb}" />
-        </Image.Source>
-      </Image>
+            Margin="1">
+      <Rectangle Width="10" Height="5" Fill="Yellow" />
     </Border>
     <TextBlock Text="UniformToFill"
-               Margin="3"
-               Grid.Column="3" />
+               Margin="1"
+               Grid.Column="3"
+                />
     <Border Grid.Column="3"
             Grid.Row="1"
             VerticalAlignment="Top"
             HorizontalAlignment="Left"
             BorderThickness="1"
             BorderBrush="Gray"
-            Margin="5">
-      <Image Width="100" Height="50" Stretch="UniformToFill">
-        <Image.Source>
-          <DrawingImage Drawing="{DynamicResource Bulb}" />
-        </Image.Source>
-      </Image>
+            Margin="1">
+      <Rectangle Width="10" Height="5" Fill="Yellow" />
     </Border>
 
     <!-- For comparison -->
 
     <Ellipse Grid.Row="2"
              Grid.Column="0"
-             Width="100"
-             Height="50"
+             Width="10"
+             Height="5"
              Stretch="None"
              Fill="Blue"
-             Margin="5"/>
+             Margin="1"/>
     <Ellipse Grid.Row="2"
              Grid.Column="1"
-             Width="100"
-             Height="50"
+             Width="10"
+             Height="5"
              Stretch="Fill"
              Fill="Blue"
-             Margin="5" />
+             Margin="1" />
     <Ellipse Grid.Row="2"
              Grid.Column="2"
-             Width="100"
-             Height="50"
+             Width="10"
+             Height="5"
              Stretch="Uniform"
              Fill="Blue"
-             Margin="5" />
+             Margin="1" />
     <Ellipse Grid.Row="2"
              Grid.Column="3"
-             Width="100"
-             Height="50"
+             Width="10"
+             Height="5"
              Stretch="UniformToFill"
              Fill="Blue"
-             Margin="5" />
+             Margin="1" />
 
   </Grid>
 </UserControl>

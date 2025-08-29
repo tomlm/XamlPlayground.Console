@@ -1,12 +1,12 @@
 ﻿<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             Margin="5">
-  <StackPanel MaxWidth="500"
+             Margin="1">
+  <StackPanel MaxWidth="50"
               HorizontalAlignment="Stretch">
     <TextBlock Text="Simple ToggleSwitch" Classes="header"/>
     <Border Classes="Thin">
       <StackPanel>
-        <ToggleSwitch Margin="10"/>
+        <ToggleSwitch Margin="1"/>
         <TextBox Text="&lt;ToggleSwitch/&gt;" Classes="CodeBox"/>
       </StackPanel>
     </Border>
@@ -15,7 +15,7 @@
 
     <Border Classes="Thin">
       <StackPanel>
-        <ToggleSwitch Content="h_eadered" IsChecked="true" Margin="10"/>
+        <ToggleSwitch Content="h_eadered" IsChecked="true" Margin="1"/>
         <TextBox Classes="CodeBox"
                  Text="&lt;ToggleSwitch&gt;headered&lt;/ToggleSwitch&gt;"/>
       </StackPanel>
@@ -28,7 +28,7 @@
         <ToggleSwitch Content="_Custom"
                       OnContent="On"
                       OffContent="Off"
-                      Margin="10"/>
+                      Margin="1"/>
 
         <TextBox Text="&lt;ToggleSwitch Content=&quot;Custom&quot; 
 ContentOn=&quot;On&quot; 
@@ -41,22 +41,21 @@ ContentOff=&quot;Off&quot; /&gt;"
 
   <UserControl.Styles >
     <Style Selector="TextBox.CodeBox" >
-      <Setter Property="Padding" Value="10"/>
+      <Setter Property="Padding" Value="1"/>
       <Setter Property="IsReadOnly" Value="True"/>
       <Setter Property="BorderBrush" Value="Transparent"/>
-      <Setter Property="FontSize" Value="14"/>
+      <Setter Property="FontSize" Value="1"/>
       <Setter Property="IsEnabled" Value="true"/>
     </Style>
 
     <Style Selector="TextBlock.header">
-      <Setter Property="FontSize" Value="18"/>
-      <Setter Property="Margin" Value="0 20 0 20"/>
+      <Setter Property="FontSize" Value="1"/>
+      <Setter Property="Margin" Value="0 2 0 2"/>
     </Style>
 
     <Style Selector="Border.Thin">
       <Setter Property="BorderBrush" Value="Gray"/>
-      <Setter Property="BorderThickness" Value="0.5"/>
-      <Setter Property="CornerRadius" Value="2"/>
+      <Setter Property="BorderThickness" Value="1"/>
     </Style>
 
   </UserControl.Styles>

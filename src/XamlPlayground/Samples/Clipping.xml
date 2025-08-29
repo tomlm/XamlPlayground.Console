@@ -1,4 +1,4 @@
-﻿<UserControl
+<UserControl
   xmlns="https://github.com/avaloniaui"
   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <Grid ColumnDefinitions="Auto" RowDefinitions="Auto,Auto">
@@ -20,11 +20,13 @@
     </Grid.Styles>
     <Border Name="clipped"
             Background="Yellow"
-            Width="100"
-            Height="100"
+            Width="10"
+            Height="10"
             Classes.clip="{Binding #useMask.IsChecked}">
       <Border.Styles>
         <Style Selector="Border.clip">
+          <!-- Complex geometry commented out for console layout -->
+          <!--
           <Setter Property="Clip" 
                   Value="M 58.625 0.07421875
                          C 50.305778 0.26687364 42.411858 7.0346526 41.806641 15.595703
@@ -46,9 +48,11 @@
                          C 72.078834 28.113269 74.047517 25.960974 74.931641 23.777344 
                          C 78.93827 14.586564 73.049722 2.8815081 63.248047 0.67382812
                          C 61.721916 0.22817968 60.165597 0.038541919 58.625 0.07421875 z " />
+          -->
+          <Setter Property="Clip" Value="M 0 0 L 5 0 L 5 5 L 0 5 Z" />
         </Style>
       </Border.Styles>
-      <Border Name="clipChild" Background="Red" Margin="4">
+      <Border Name="clipChild" Background="Red" Margin="1">
         <!-- Setting opacity puts the TextBox on a new layer -->
         <TextBox Text="Avalonia" Opacity="0.9" VerticalAlignment="Center"/>
         <Border.RenderTransform>

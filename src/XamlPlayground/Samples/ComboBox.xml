@@ -2,15 +2,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:sys="using:System"
              xmlns:col="using:System.Collections">
-  <StackPanel Orientation="Vertical" Spacing="4">
+  <StackPanel Orientation="Vertical" Spacing="1">
     <TextBlock Classes="h2">A drop-down list.</TextBlock>
 
-    <WrapPanel HorizontalAlignment="Center" Margin="0 16 0 0"
-               MaxWidth="660">
+    <WrapPanel HorizontalAlignment="Center" Margin="0 2 0 0"
+               MaxWidth="66">
       <WrapPanel.Styles>
         <Style Selector="ComboBox">
-          <Setter Property="Width" Value="250" />
-          <Setter Property="Margin" Value="10" />
+          <Setter Property="Width" Value="25" />
+          <Setter Property="Margin" Value="1" />
         </Style>
       </WrapPanel.Styles>
       <ComboBox PlaceholderText="Pick an Item">
@@ -42,11 +42,11 @@
         <ComboBoxItem>
           <Panel>
             <Rectangle Fill="{DynamicResource SystemAccentColor}"/>
-            <TextBlock Margin="8">Control Items</TextBlock>
+            <TextBlock Margin="1">Control Items</TextBlock>
           </Panel>
         </ComboBoxItem>
         <ComboBoxItem>
-          <Ellipse Width="50" Height="50" Fill="Yellow"/>
+          <Ellipse Width="5" Height="5" Fill="Yellow"/>
         </ComboBoxItem>
         <ComboBoxItem>
           <TextBox Text="TextBox"/>

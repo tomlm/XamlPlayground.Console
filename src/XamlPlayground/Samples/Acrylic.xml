@@ -2,33 +2,32 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             d:DesignHeight="800"
-             d:DesignWidth="400"
+             d:DesignHeight="80"
+             d:DesignWidth="40"
              mc:Ignorable="d">
   <UserControl.Styles>
     <Style Selector="ExperimentalAcrylicBorder">
-      <Setter Property="CornerRadius" Value="5" />
-      <Setter Property="MaxWidth" Value="660" />
+      <Setter Property="MaxWidth" Value="66" />
     </Style>
     <Style Selector="TextBlock">
       <Setter Property="VerticalAlignment" Value="Center" />
       <Setter Property="Foreground" Value="Black" />
     </Style>
     <Style Selector="Slider">
-      <Setter Property="Margin" Value="8,0" />
+      <Setter Property="Margin" Value="1,0" />
       <Setter Property="Minimum" Value="0" />
       <Setter Property="Maximum" Value="1" />
       <Setter Property="LargeChange" Value="0.2" />
       <Setter Property="SmallChange" Value="0.1" />
     </Style>
   </UserControl.Styles>
-  <StackPanel Spacing="20">
+  <StackPanel Spacing="2">
 
     <ExperimentalAcrylicBorder>
       <ExperimentalAcrylicBorder.Material>
         <ExperimentalAcrylicMaterial BackgroundSource="Digger" TintColor="White" />
       </ExperimentalAcrylicBorder.Material>
-      <Grid Margin="20,10"
+      <Grid Margin="2,1"
             ColumnDefinitions="Auto,*,Auto"
             RowDefinitions="Auto,Auto">
         <TextBlock Grid.Row="0"
@@ -56,13 +55,13 @@
 
     <UniformGrid x:Name="BordersGrid"
                  HorizontalAlignment="Stretch"
-                 MaxWidth="660"
+                 MaxWidth="66"
                  Columns="3">
       <UniformGrid.Styles>
         <Style Selector="ExperimentalAcrylicBorder">
           <Setter Property="Height" Value="{Binding $self.Bounds.Width}" />
-          <Setter Property="Margin" Value="10" />
-          <Setter Property="MaxWidth" Value="200" />
+          <Setter Property="Margin" Value="1" />
+          <Setter Property="MaxWidth" Value="20" />
         </Style>
       </UniformGrid.Styles>
       <ExperimentalAcrylicBorder>
@@ -151,7 +150,7 @@
 
 
     <ExperimentalAcrylicBorder Width="{Binding #BordersGrid.Bounds.Width}"
-                               Height="160">
+                               Height="16">
       <ExperimentalAcrylicBorder.Material>
         <ExperimentalAcrylicMaterial BackgroundSource="Digger"
                                      MaterialOpacity="{Binding #MaterialOpacitySlider.Value}"

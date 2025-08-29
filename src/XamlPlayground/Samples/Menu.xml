@@ -1,14 +1,14 @@
 ﻿<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-  <StackPanel Orientation="Vertical" Spacing="4">
-    <TextBlock Classes="h2">Exported menu fallback</TextBlock>
-    <TextBlock>(Should be only visible on platforms without desktop-global menu bar)</TextBlock>
+  <StackPanel Orientation="Vertical" Spacing="1">
+    <TextBlock Classes="h2" >Exported menu fallback</TextBlock>
+    <TextBlock >(Should be only visible on platforms without desktop-global menu bar)</TextBlock>
     <NativeMenuBar/>
-    <TextBlock Classes="h2">A window menu</TextBlock>
+    <TextBlock Classes="h2" >A window menu</TextBlock>
 
     <WrapPanel HorizontalAlignment="Center">
       <StackPanel>
-        <TextBlock Classes="h3" Margin="4 8">Defined in XAML</TextBlock>
+        <TextBlock Classes="h3" Margin="1 1" >Defined in XAML</TextBlock>
         <Menu>
           <MenuItem Header="_First">
             <MenuItem Header="Standard _Menu Item" InputGesture="Ctrl+A" />
