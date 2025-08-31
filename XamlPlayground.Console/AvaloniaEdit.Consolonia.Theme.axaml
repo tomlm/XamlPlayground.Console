@@ -1,5 +1,9 @@
 ﻿<Styles xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ae="clr-namespace:AvaloniaEdit;assembly=AvaloniaEdit"
+        xmlns:editing="clr-namespace:AvaloniaEdit.Editing;assembly=AvaloniaEdit"
+        xmlns:rendering="clr-namespace:AvaloniaEdit.Rendering;assembly=AvaloniaEdit"
+>
   <Styles.Resources>
     <ResourceDictionary>
       <x:Double x:Key="SearchPanelFontSize">1.0</x:Double>
@@ -36,4 +40,22 @@
       </ResourceDictionary.MergedDictionaries>
     </ResourceDictionary>
   </Styles.Resources>
+
+  <!--disable border around current line-->
+  <Style Selector="rendering|TextView">
+    <Setter Property="CurrentLineBorder">
+      <Pen Thickness="0" Brush="Transparent"/>
+    </Setter>
+  </Style>
+  <!--disable border around selections-->
+  <Style Selector="editing|TextArea">
+    <Setter Property="SelectionBorder" >
+      <Pen Thickness="0" Brush="Transparent"/>
+    </Setter>
+  </Style>
+  <!-- There is a bug in AvaloniaEdit which hard codes line height to 1.35 * FontSize. To get line height of 1 we set FontSize to 0.7407407407407407 of desired size-->
+  <Style Selector="ae|TextEditor">
+    <Setter Property="FontSize" Value="0.7407407407407407"/>
+  </Style>
+
 </Styles>
