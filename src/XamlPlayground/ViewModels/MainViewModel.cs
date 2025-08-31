@@ -56,7 +56,7 @@ public partial class MainViewModel : ViewModelBase
         }
         else
         {
-//CurrentSample = _samples.FirstOrDefault(x => x.Name == "Demo");
+            CurrentSample = _samples.FirstOrDefault(x => x.Name == "HelloWorld");
         }
     }
 
