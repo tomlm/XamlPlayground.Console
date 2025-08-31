@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -14,17 +14,14 @@
     <PackageVersion>1.0.0</PackageVersion>
     <Authors>Tom Laird-McConnell</Authors>
     <Description>A console-based version of Avalonia XAML playground tool</Description>
+    <Copyright>Copyright (c) Wiesław Šoltés</Copyright>
+    <PackageIcon>Icon.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageTags>xaml;avalonia;console;tool</PackageTags>
     <RepositoryUrl>https://github.com/tomlm/XamlPlayground.Console</RepositoryUrl>
   </PropertyGroup>
 
-  <ItemGroup>
-    <AvaloniaXaml Remove="ConsoloniaEditTheme.axaml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <AvaloniaResource Include="ConsoloniaEditTheme.axaml" />
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Consolonia" Version="11.3.4-beta.1414" />
@@ -34,4 +31,8 @@
     <ProjectReference Include="..\src\XamlPlayground\XamlPlayground.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="../Icon.png" Pack="True" PackagePath="\" />
+    <None Include="../README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
 </Project>
