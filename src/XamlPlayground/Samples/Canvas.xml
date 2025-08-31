@@ -4,40 +4,10 @@
     <TextBlock Classes="h2">A panel which lays out its children by explicit coordinates</TextBlock>
     <Canvas Background="Yellow" Width="30" Height="40">
       <Rectangle Fill="Blue" Width="6" Height="4" Canvas.Left="4" Canvas.Top="3">
-        <Rectangle.OpacityMask>
-          <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,100%">
-            <LinearGradientBrush.GradientStops>
-              <GradientStop Offset="0" Color="Black"/>
-              <GradientStop Offset="1" Color="Transparent"/>
-            </LinearGradientBrush.GradientStops>
-          </LinearGradientBrush>
-        </Rectangle.OpacityMask>
       </Rectangle>
-      <Ellipse Fill="Green" Width="6" Height="6" Canvas.Left="9" Canvas.Top="10"/>
-      <!-- Complex geometry commented out for console layout -->
-      <!--
-      <Path Fill="Orange" Data="M 0,0 c 0,0 50,0 50,-50 c 0,0 50,0 50,50 h -50 v 50 l -50,-50 Z" Canvas.Left="30" Canvas.Top="250"/>
-      <Path Fill="OrangeRed" Canvas.Left="180" Canvas.Top="250">
-        <Path.Data>
-          <PathGeometry>
-            <PathFigure StartPoint="0,0" IsClosed="True">
-              <QuadraticBezierSegment Point1="50,0" Point2="50,-50" />
-              <QuadraticBezierSegment Point1="100,-50" Point2="100,0" />
-              <LineSegment Point="50,0" />
-              <LineSegment Point="50,50" />
-            </PathFigure>
-          </PathGeometry>
-        </Path.Data>
-      </Path>
-      -->
       <Rectangle Fill="Orange" Width="5" Height="5" Canvas.Left="3" Canvas.Top="25"/>
       <Rectangle Fill="OrangeRed" Width="5" Height="5" Canvas.Left="18" Canvas.Top="25"/>
       <Line StartPoint="12,19" EndPoint="3,12" Stroke="Red" StrokeThickness="1"/>
-      <!-- Complex geometry commented out for console layout -->
-      <!--
-      <Polygon Points="75,0 120,120 0,45 150,45 30,120" Stroke="DarkBlue" StrokeThickness="1" Fill="Violet" Canvas.Left="150" Canvas.Top="31"/>
-      <Polyline Points="0,0 65,0 78,-26 91,39 104,-39 117,13 130,0 195,0" Stroke="Brown" Canvas.Left="30" Canvas.Top="350"/>
-      -->
       <Rectangle Fill="Violet" Stroke="DarkBlue" StrokeThickness="1" Width="5" Height="5" Canvas.Left="15" Canvas.Top="3"/>
       <Rectangle Fill="Brown" Width="8" Height="1" Canvas.Left="3" Canvas.Top="35"/>
     </Canvas>

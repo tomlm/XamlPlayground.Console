@@ -3,6 +3,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:sys="clr-namespace:System;assembly=System.Private.CoreLib"
+             xmlns:console="https://github.com/jinek/consolonia"
              mc:Ignorable="d" d:DesignWidth="80" d:DesignHeight="45">
   <StackPanel Orientation="Vertical" Spacing="1" HorizontalAlignment="Stretch">
     <TextBlock Name="DatePickerDesc" Classes="h2" TextWrapping="Wrap" />
