@@ -13,7 +13,7 @@
     <Thickness x:Key="MediumMargin">0</Thickness>
     <Thickness x:Key="SmallPadding">0</Thickness>
     <Thickness x:Key="MediumPadding">0</Thickness>
-    <Thickness x:Key="TabItemMargin">0</Thickness>
+    <Thickness x:Key="TabItemMargin">1 0 0 0</Thickness>
     <Thickness x:Key="LogoMargin">0</Thickness>
     <Thickness x:Key="TitleMargin">0</Thickness>
     <Thickness x:Key="HeaderStackMargin">0</Thickness>
@@ -51,7 +51,7 @@
     <x:Double x:Key="SettingsMinWidth">12</x:Double>
 
     <!-- Border Thickness -->
-    <Thickness x:Key="TabControlBorderThickness">0,0,1,0</Thickness>
+    <Thickness x:Key="TabControlBorderThickness">0</Thickness>
 
     <!-- Design Preview Dimensions -->
     <x:Double x:Key="PreviewWidth">90</x:Double>

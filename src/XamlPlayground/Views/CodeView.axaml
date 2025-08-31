@@ -47,7 +47,7 @@
           <Setter Property="FontSize" Value="{DynamicResource FontSizeNormal}" />
         </Style>
       </TabControl.Styles>
-      <TabItem Header="Xaml" BorderThickness="0">
+      <TabItem Header="Xaml" BorderThickness="0" Margin="{StaticResource TabItemMargin}">
         <ae:TextEditor Margin="{StaticResource ZeroMargin}"
                        IsReadOnly="{OnFormFactor False, Mobile=True}"
                        Document="{Binding CurrentSample.Xaml}"
@@ -77,7 +77,7 @@
           </i:Interaction.Behaviors>
         </ae:TextEditor>
       </TabItem>
-      <TabItem Header="Code" BorderThickness="0">
+      <TabItem Header="Code" BorderThickness="0" Margin="{StaticResource TabItemMargin}">
         <ae:TextEditor Margin="{StaticResource ZeroMargin}"
                        IsReadOnly="{OnFormFactor False, Mobile=True}"
                        Document="{Binding CurrentSample.Code}"

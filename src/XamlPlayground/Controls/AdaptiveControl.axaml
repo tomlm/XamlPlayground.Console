@@ -1,5 +1,6 @@
 ﻿<Styles xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:console="https://github.com/jinek/consolonia"
         xmlns:c="clr-namespace:XamlPlayground.Controls"
         xmlns:i="clr-namespace:Avalonia.Xaml.Interactivity;assembly=Avalonia.Xaml.Interactivity"
         xmlns:ir="clr-namespace:Avalonia.Xaml.Interactions.Responsive;assembly=Avalonia.Xaml.Interactions.Responsive">
@@ -23,10 +24,14 @@
           <ContentPresenter Name="PART_HeaderContentPresenter"
                             Content="{TemplateBinding Header}"
                             DockPanel.Dock="Top" />
-          <Grid ColumnDefinitions="50*,Auto,50*" RowDefinitions="*,Auto,*">
+          <Grid ColumnDefinitions="*,Auto,*" >
             <ContentPresenter Name="PART_LeftContentPresenter"
-                              Content="{TemplateBinding Left}">
-              <ContentPresenter.Styles>
+                              Content="{TemplateBinding Left}"
+                              BorderThickness="0">
+              <ContentPresenter.BorderBrush>
+                <console:LineBrush LineStyle="SingleLine" Brush="Black"/>
+              </ContentPresenter.BorderBrush>
+              <!--<ContentPresenter.Styles>
                 <Style Selector="ContentPresenter.horizontal">
                   <Setter Property="(Grid.Column)" Value="0" />
                   <Setter Property="(Grid.Row)" Value="0" />
@@ -43,32 +48,22 @@
                   <ir:AdaptiveClassSetter MinWidth="0" MaxWidth="{StaticResource AdaptiveWidthTrigger}" ClassName="vertical" />
                   <ir:AdaptiveClassSetter MinWidth="{StaticResource AdaptiveWidthTrigger}" MaxWidth="Infinity" ClassName="horizontal" />
                 </ir:AdaptiveBehavior>
-              </i:Interaction.Behaviors>
+              </i:Interaction.Behaviors>-->
             </ContentPresenter>
-            <GridSplitter Name="PART_GridSplitter">
+            <GridSplitter Name="PART_GridSplitter" ResizeDirection="Columns" Grid.Column="1" BorderThickness="1">
               <GridSplitter.Styles>
                 <Style Selector="GridSplitter.horizontal">
-                  <Setter Property="ResizeBehavior" Value="PreviousAndNext" />
-                  <Setter Property="ResizeDirection" Value="Columns" />
-                  <Setter Property="Width" Value="{StaticResource GridSplitterSize}" />
-                  <Setter Property="(Grid.Column)" Value="1" />
-                  <Setter Property="(Grid.Row)" Value="0" />
-                  <Setter Property="(Grid.RowSpan)" Value="3" />
                   <Setter Property="Template">
                     <Setter.Value>
                       <ControlTemplate>
-                        <Border Background="Transparent">
-                          <Separator Background="{DynamicResource SystemChromeAltLowColor}"
-                                     Margin="{StaticResource ZeroMargin}"
-                                     Width="{StaticResource SeparatorThickness}"
-                                     HorizontalAlignment="Stretch"
-                                     VerticalAlignment="Stretch"/>
-                        </Border>
+                        <Rectangle Width="1" 
+                                   Fill="LightGray"
+                                   VerticalAlignment="Stretch" />
                       </ControlTemplate>
                     </Setter.Value>
                   </Setter>
                 </Style>
-                <Style Selector="GridSplitter.vertical">
+                <!--<Style Selector="GridSplitter.vertical">
                   <Setter Property="ResizeBehavior" Value="PreviousAndNext" />
                   <Setter Property="ResizeDirection" Value="Rows" />
                   <Setter Property="Height" Value="{StaticResource GridSplitterSize}" />
@@ -78,17 +73,15 @@
                   <Setter Property="Template">
                     <Setter.Value>
                       <ControlTemplate>
-                        <Border Background="Transparent">
-                          <Separator Background="{DynamicResource SystemChromeAltLowColor}"
-                                     Margin="{StaticResource ZeroMargin}"
-                                     Height="{StaticResource SeparatorThickness}"
-                                     HorizontalAlignment="Stretch"
-                                     VerticalAlignment="Stretch"/>
-                        </Border>
+                        <Separator Background="Black"
+                                   Margin="{StaticResource ZeroMargin}"
+                                   Height="{StaticResource SeparatorThickness}"
+                                   HorizontalAlignment="Stretch"
+                                   VerticalAlignment="Stretch"/>
                       </ControlTemplate>
                     </Setter.Value>
                   </Setter>
-                </Style>
+                </Style>-->
               </GridSplitter.Styles>
               <i:Interaction.Behaviors>
                 <ir:AdaptiveBehavior SourceControl="{Binding #PART_DockPanel}">
@@ -98,8 +91,9 @@
               </i:Interaction.Behaviors>
             </GridSplitter>
             <ContentPresenter Name="PART_RightContentPresenter"
+                              Grid.Column="2"
                               Content="{TemplateBinding Right}">
-              <ContentPresenter.Styles>
+              <!--<ContentPresenter.Styles>
                 <Style Selector="ContentPresenter.horizontal">
                   <Setter Property="(Grid.Column)" Value="2" />
                   <Setter Property="(Grid.Row)" Value="0" />
@@ -116,7 +110,7 @@
                   <ir:AdaptiveClassSetter MinWidth="0" MaxWidth="{StaticResource AdaptiveWidthTrigger}" ClassName="vertical" />
                   <ir:AdaptiveClassSetter MinWidth="{StaticResource AdaptiveWidthTrigger}" MaxWidth="Infinity" ClassName="horizontal" />
                 </ir:AdaptiveBehavior>
-              </i:Interaction.Behaviors>
+              </i:Interaction.Behaviors>-->
             </ContentPresenter>
           </Grid>
         </DockPanel>
