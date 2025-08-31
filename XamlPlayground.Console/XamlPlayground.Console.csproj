@@ -1,26 +1,37 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-    <PropertyGroup>
-        <OutputType>Exe</OutputType>
-        <TargetFramework>net8.0</TargetFramework>
-        <ImplicitUsings>enable</ImplicitUsings>
-        <Nullable>enable</Nullable>
-    </PropertyGroup>
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
 
-    <ItemGroup>
-      <AvaloniaXaml Remove="ConsoloniaEditTheme.axaml" />
-    </ItemGroup>
+    <!-- .NET Tool Package Properties -->
+    <PackAsTool>true</PackAsTool>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <ToolCommandName>XamlPlayground</ToolCommandName>
+    <PackageId>XamlPlayground.Console</PackageId>
+    <PackageVersion>1.0.0</PackageVersion>
+    <Authors>Tom Laird-McConnell</Authors>
+    <Description>A console-based version of Avalonia XAML playground tool</Description>
+    <PackageTags>xaml;avalonia;console;tool</PackageTags>
+    <RepositoryUrl>https://github.com/tomlm/XamlPlayground.Console</RepositoryUrl>
+  </PropertyGroup>
 
-    <ItemGroup>
-      <AvaloniaResource Include="ConsoloniaEditTheme.axaml" />
-    </ItemGroup>
-    
-    <ItemGroup>
-        <PackageReference Include="Consolonia" Version="11.3.4-beta.1414" />
-    </ItemGroup>
-    
-    <ItemGroup>
-      <ProjectReference Include="..\src\XamlPlayground\XamlPlayground.csproj" />
-    </ItemGroup>
+  <ItemGroup>
+    <AvaloniaXaml Remove="ConsoloniaEditTheme.axaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AvaloniaResource Include="ConsoloniaEditTheme.axaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Consolonia" Version="11.3.4-beta.1414" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\src\XamlPlayground\XamlPlayground.csproj" />
+  </ItemGroup>
 
 </Project>
