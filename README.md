@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/bfd33d90-5c78-4efb-b8d3-3d67f9a0cc99)
+![image](https://raw.githubusercontent.com/tomlm/XamlPlayground.Console/main/.github/images/screenshot.png)
 
 # Avalonia UI Playground for Console applications
 

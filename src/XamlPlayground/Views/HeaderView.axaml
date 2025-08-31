@@ -80,15 +80,16 @@
 
         <Menu VerticalAlignment="Center">
 
-          <MenuItem Header="File" Classes="main">
-            <MenuItem Header="Open Xaml..." Command="{Binding OpenXamlFileCommand}" />
+          <MenuItem Header="_File" Classes="main">
+            <MenuItem Header="Open _Xaml..." Command="{Binding OpenXamlFileCommand}" />
             <MenuItem Header="Save Xaml As..." Command="{Binding SaveXamlFileCommand}" />
-            <Separator />
-            <MenuItem Header="Open Code..." Command="{Binding OpenCodeFileCommand}" />
+            <MenuItem Header="Open _Code..." Command="{Binding OpenCodeFileCommand}" />
             <MenuItem Header="Save Code As..." Command="{Binding SaveCodeFileCommand}" />
+            <Separator />
+            <MenuItem Header="E_xit" Command="{Binding CloseAppCommand}"/>
           </MenuItem>
 
-          <MenuItem Header="Run"
+          <MenuItem Header="_Run"
                     Classes="main"
                     Command="{Binding RunCommand}" />
 
@@ -98,7 +99,7 @@
             <MenuItem.Header>
               <StackPanel Orientation="Horizontal"
                           Margin="{StaticResource HeaderItemMargin}">
-                <Label Content="Samples"
+                <Label Content="_Samples"
                        Classes="text" />
                 <console:OnPlatform>
                   <console:OnPlatform.Default>

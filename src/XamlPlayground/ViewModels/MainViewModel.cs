@@ -17,6 +17,7 @@ using System.ComponentModel;
 using XamlPlayground.Services;
 using Avalonia.Threading;
 using System.Diagnostics;
+using Avalonia.Controls.ApplicationLifetimes;
 
 namespace XamlPlayground.ViewModels;
 
@@ -37,7 +38,7 @@ public partial class MainViewModel : ViewModelBase
     public MainViewModel(string? initialGist)
     {
         if (App.Current.ApplicationLifetime.GetType().Name.Contains("Consolonia"))
-            _editorFontSize = 1/1.35f;
+            _editorFontSize = 1 / 1.35f;
         else
             _editorFontSize = 12;
         _samples = GetSamples(".xml");
@@ -47,6 +48,7 @@ public partial class MainViewModel : ViewModelBase
         SaveXamlFileCommand = new AsyncRelayCommand(async () => await SaveXamlFile());
         OpenCodeFileCommand = new AsyncRelayCommand(async () => await OpenCodeFile());
         SaveCodeFileCommand = new AsyncRelayCommand(async () => await SaveCodeFile());
+        CloseAppCommand = new AsyncRelayCommand(async () => await CloseApp());
         RunCommand = new RelayCommand(() => Run(_currentSample?.Xaml.Text, _currentSample?.Code.Text));
         GistCommand = new AsyncRelayCommand<string?>(Gist);
 
@@ -73,6 +75,8 @@ public partial class MainViewModel : ViewModelBase
     public ICommand OpenCodeFileCommand { get; }
 
     public ICommand SaveCodeFileCommand { get; }
+
+    public ICommand CloseAppCommand { get; }
 
     protected override void OnPropertyChanged(PropertyChangedEventArgs e)
     {
@@ -109,7 +113,7 @@ public partial class MainViewModel : ViewModelBase
             var (xaml, code) = await GetGistContent(id);
             var sample = new SampleViewModel("Gist", xaml, code, Open, AutoRun);
             _samples.Insert(0, sample);
-            CurrentSample = sample; 
+            CurrentSample = sample;
             AutoRun(CurrentSample);
         }
         catch (Exception exception)
@@ -172,7 +176,7 @@ public partial class MainViewModel : ViewModelBase
         CurrentSample = sampleViewModel;
 
         if (_enableAutoRun)
-        { 
+        {
             Run(sampleViewModel.Xaml.Text, sampleViewModel.Code.Text);
         }
     }
@@ -199,7 +203,7 @@ public partial class MainViewModel : ViewModelBase
     private void AutoRun(SampleViewModel sampleViewModel)
     {
         if (EnableAutoRun)
-        { 
+        {
             Run(sampleViewModel.Xaml.Text, sampleViewModel.Code.Text);
         }
     }
@@ -232,7 +236,7 @@ public partial class MainViewModel : ViewModelBase
                     GC.WaitForPendingFinalizers();
                 }
             }
- #endif
+#endif
             Assembly? scriptAssembly = null;
 
             if (code is { } && !string.IsNullOrWhiteSpace(code))
@@ -422,6 +426,11 @@ public partial class MainViewModel : ViewModelBase
                 Debug.WriteLine(exception);
             }
         }
+    }
+
+    private async Task CloseApp()
+    {
+        (App.Current.ApplicationLifetime as IClassicDesktopStyleApplicationLifetime)?.Shutdown();
     }
 
     private async Task SaveCodeFile()

@@ -11,7 +11,7 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <ToolCommandName>XamlPlayground</ToolCommandName>
     <PackageId>XamlPlayground.Console</PackageId>
-    <PackageVersion>1.0.0</PackageVersion>
+    <PackageVersion>1.0.1</PackageVersion>
     <Authors>Tom Laird-McConnell</Authors>
     <Description>A console-based version of Avalonia XAML playground tool</Description>
     <Copyright>Copyright (c) Wiesław Šoltés</Copyright>
@@ -24,7 +24,7 @@
 
 
   <ItemGroup>
-    <PackageReference Include="Consolonia" Version="11.3.4-beta.1414" />
+    <PackageReference Include="Consolonia" Version="11.3.4-beta.*" />
   </ItemGroup>
 
   <ItemGroup>
