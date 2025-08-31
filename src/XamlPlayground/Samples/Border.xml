@@ -12,11 +12,11 @@
                 Margin="0,2,0,0"
                 HorizontalAlignment="Center"
                 Spacing="2">
-      <Border BorderBrush="{DynamicResource SystemAccentColor}" BorderThickness="1" Padding="2">
+      <Border BorderBrush="red" BorderThickness="1" >
         <TextBlock>Border</TextBlock>
       </Border>
-      <Border Background="{DynamicResource SystemAccentColorDark1}"
-              BorderBrush="{DynamicResource SystemAccentColor}"
+      <Border Background="Green"
+              BorderBrush="Yellow"
               BorderThickness="1"
               Padding="2">
         <TextBlock>Border and Background</TextBlock>

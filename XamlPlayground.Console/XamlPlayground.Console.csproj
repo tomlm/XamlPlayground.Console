@@ -6,6 +6,14 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
     </PropertyGroup>
+
+    <ItemGroup>
+      <AvaloniaXaml Remove="ConsoloniaEditTheme.axaml" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <AvaloniaResource Include="ConsoloniaEditTheme.axaml" />
+    </ItemGroup>
     
     <ItemGroup>
         <PackageReference Include="Consolonia" Version="11.3.4-beta.1414" />

@@ -5,41 +5,46 @@
              xmlns:console="https://github.com/jinek/consolonia"
              mc:Ignorable="d" d:DesignWidth="40" d:DesignHeight="25"
              x:Name="_labelsPage">
-  <UserControl.Styles>
-    <Style Selector="Label">
-      <Setter Property="VerticalAlignment" Value="Center"/>
-      <Setter Property="Margin" Value="1,1,0,1"/>
-      <Setter Property="FontSize" Value="1"/>
-    </Style>
-    <Style Selector="TextBox">
-      <Setter Property="VerticalAlignment" Value="Center"/>
-      <Setter Property="Margin" Value="0,1,1,1"/>
-    </Style>
-    <Style Selector="CheckBox">
-      <Setter Property="VerticalAlignment" Value="Center"/>
-      <Setter Property="Margin" Value="0,1,1,1"/>
-      <Setter Property="FontSize" Value="1"/>
-    </Style>
-    <Style Selector="Button[IsDefault=true]">
-      <Setter Property="Background" Value="{DynamicResource HighlightBrush}"/>
-      <Setter Property="FontSize" Value="1"/>
-    </Style>
-  </UserControl.Styles>
-  <ScrollViewer VerticalScrollBarVisibility="Auto"
-                HorizontalScrollBarVisibility="Hidden">
-    <Grid HorizontalAlignment="Left" VerticalAlignment="Top" RowDefinitions="Auto,Auto,Auto,Auto,Auto,*" ColumnDefinitions="Auto,1,*" Width="25">
-      <Label Target="firstNameEdit" Grid.Row="0" Grid.Column="0" >_First name</Label>
-      <TextBox Name="firstNameEdit" Grid.Column="2" Grid.Row="0" Text="FirstName"></TextBox>
-      <Label Target="lastNameEdit" Grid.Row="1" Grid.Column="0" >_Last name</Label>
-      <TextBox Name="lastNameEdit" Grid.Column="2" Grid.Row="1" Text="LastName"></TextBox>
-      <Label Target="bannedCheck" Grid.Row="2" Grid.Column="0" >_Banned</Label>
-      <CheckBox Name="bannedCheck" Grid.Column="2" Grid.Row="2" IsChecked="False"></CheckBox>
-      <GridSplitter Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.RowSpan="3" >
-      </GridSplitter>
-      <StackPanel Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Right">
-        <Button IsCancel="True" Command="{Binding #_labelsPage.DoCancel}" >Cancel</Button>
-        <Button IsDefault="True" Command="{Binding #_labelsPage.DoSave}" >Save</Button>
-      </StackPanel>
-    </Grid>
-  </ScrollViewer>
+  <Grid HorizontalAlignment="Left"
+         VerticalAlignment="Top"
+         ColumnDefinitions="Auto,6,*"
+         RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,*">
+    <TextBlock Grid.Row="0"
+               Grid.ColumnSpan="3"
+               Text="Press ALT+N, ALT+L, ALT+B to focus on a field. Or use arrow keys to jump between fields using XYFocus"
+               Margin="0,0,0,1"
+               TextWrapping="Wrap"
+               Foreground="{DynamicResource ThemeNoDisturbBrush}" />
+    <Label Target="FirstNameEdit"
+           Grid.Row="1"
+           Grid.Column="0">
+      First _name
+    </Label>
+    <TextBox Name="FirstNameEdit"
+             Grid.Column="2"
+             Grid.Row="1"
+             Width="20"
+             HorizontalAlignment="Left"
+             Text="{Binding FirstName}" />
+    <Label Target="LastNameEdit"
+           Grid.Row="2"
+           Grid.Column="0">
+      _Last name
+    </Label>
+    <TextBox Name="LastNameEdit"
+             Grid.Column="2"
+             Grid.Row="2"
+             Width="20"
+             HorizontalAlignment="Left"
+             Text="{Binding LastName}" />
+    <Label Target="BannedCheck"
+           Grid.Row="3"
+           Grid.Column="0">
+      _Banned
+    </Label>
+    <CheckBox Name="BannedCheck"
+              Grid.Column="2"
+              Grid.Row="3"
+              IsChecked="{Binding IsBanned}" />
+  </Grid>
 </UserControl>

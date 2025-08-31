@@ -65,19 +65,14 @@
     <local:ViewLocator />
   </Application.DataTemplates>
   <Application.Styles>
-    <SimpleTheme />
 
+    <StyleInclude Source="avares:/ConsoloniaEditTheme.axaml" />
+    <StyleInclude Source="avares://XamlPlayground/Controls/AdaptiveControl.axaml" />
     <console:ModernTheme />
 
-    <StyleInclude Source="avares://AvaloniaEdit/Themes/Simple/AvaloniaEdit.xaml" />
-    <StyleInclude Source="avares://XamlPlayground/Controls/AdaptiveControl.axaml" />
     <Style Selector="Label.text > AccessText">
       <Setter Property="ClipToBounds" Value="False" />
       <Setter Property="TextWrapping" Value="Wrap" />
-    </Style>
-
-    <Style Selector="Label">
-      <Setter Property="Padding" Value="0 0 1 0" />
     </Style>
 
     <Style Selector="arender|TextView">
@@ -94,5 +89,5 @@
     <Style Selector="ae|TextEditor">
       <Setter Property="FontSize" Value="0.7407407407407407"/>
     </Style>
-   </Application.Styles>
+  </Application.Styles>
 </Application>

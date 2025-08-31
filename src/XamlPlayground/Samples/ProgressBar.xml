@@ -1,24 +1,30 @@
-﻿<UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:console="https://github.com/jinek/consolonia">
-  <StackPanel Orientation="Vertical" Spacing="1">
+﻿<UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <StackPanel Orientation="Vertical" Spacing="4">
     <TextBlock Classes="h2">A progress bar control</TextBlock>
     <StackPanel>
-      <CheckBox x:Name="showProgress" Margin="1,2,0,0" Content="Show Progress Text" />
-      <CheckBox x:Name="isIndeterminate" Margin="1,2,0,0" Content="Toggle Indeterminate" />
-      <StackPanel Orientation="Horizontal" Margin="0,2,0,0" HorizontalAlignment="Center" Spacing="2">
-        <StackPanel Spacing="2">
-          <ProgressBar IsIndeterminate="{Binding #isIndeterminate.IsChecked}" ShowProgressText="{Binding #showProgress.IsChecked}" Value="{Binding #hprogress.Value}" />
+      <CheckBox x:Name="showProgress" Content="Show Progress Text" />
+      <CheckBox x:Name="isIndeterminate"  Content="Toggle Indeterminate" />
+      <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="1">
+        <StackPanel Spacing="1">
+          <ProgressBar IsIndeterminate="{Binding #isIndeterminate.IsChecked}"
+                ShowProgressText="{Binding #showProgress.IsChecked}"
+                Width="20"
+                Value="{Binding #hprogress.Value}" />
         </StackPanel>
-        <ProgressBar IsIndeterminate="{Binding #isIndeterminate.IsChecked}" ShowProgressText="{Binding #showProgress.IsChecked}" Value="{Binding #vprogress.Value}" Orientation="Vertical" />
+        <ProgressBar IsIndeterminate="{Binding #isIndeterminate.IsChecked}"
+        ShowProgressText="{Binding #showProgress.IsChecked}"
+        Value="{Binding #vprogress.Value}"
+        Width="20"
+        Orientation="Vertical" />
       </StackPanel>
-      <StackPanel Margin="2">
+      <StackPanel Margin="1">
         <Slider Name="hprogress" Maximum="100" Value="40" />
         <Slider Name="vprogress" Maximum="100" Value="60" />
       </StackPanel>
 
       <StackPanel Spacing="1">
         <ProgressBar VerticalAlignment="Center" IsIndeterminate="True" />
-        <ProgressBar VerticalAlignment="Center" Value="5" Maximum="10" />
+        <ProgressBar VerticalAlignment="Center" Value="10" Maximum="30" />
         <ProgressBar VerticalAlignment="Center" Value="50" />
         <ProgressBar VerticalAlignment="Center" Value="50" Minimum="25" Maximum="75" />
       </StackPanel>
