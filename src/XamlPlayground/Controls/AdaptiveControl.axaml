@@ -28,9 +28,6 @@
             <ContentPresenter Name="PART_LeftContentPresenter"
                               Content="{TemplateBinding Left}"
                               BorderThickness="0">
-              <ContentPresenter.BorderBrush>
-                <console:LineBrush LineStyle="SingleLine" Brush="Black"/>
-              </ContentPresenter.BorderBrush>
               <!--<ContentPresenter.Styles>
                 <Style Selector="ContentPresenter.horizontal">
                   <Setter Property="(Grid.Column)" Value="0" />
@@ -50,19 +47,22 @@
                 </ir:AdaptiveBehavior>
               </i:Interaction.Behaviors>-->
             </ContentPresenter>
-            <GridSplitter Name="PART_GridSplitter" ResizeDirection="Columns" Grid.Column="1" BorderThickness="1">
+            <console:LineSeparator Grid.Column="1"
+                Orientation="Vertical"
+                Brush="Black"/>
+
+            <GridSplitter Name="PART_GridSplitter" ResizeDirection="Columns" Grid.Column="1">
               <GridSplitter.Styles>
-                <Style Selector="GridSplitter.horizontal">
+                <!--<Style Selector="GridSplitter.horizontal">
                   <Setter Property="Template">
                     <Setter.Value>
                       <ControlTemplate>
-                        <Rectangle Width="1" 
-                                   Fill="LightGray"
-                                   VerticalAlignment="Stretch" />
+                        <console:LineSeparator Orientation="Vertical"
+                                   Brush="Black"/>
                       </ControlTemplate>
                     </Setter.Value>
                   </Setter>
-                </Style>
+                </Style>-->
                 <!--<Style Selector="GridSplitter.vertical">
                   <Setter Property="ResizeBehavior" Value="PreviousAndNext" />
                   <Setter Property="ResizeDirection" Value="Rows" />
