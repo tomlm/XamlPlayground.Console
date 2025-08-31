@@ -16,7 +16,7 @@
           <ToggleButton Content="Disabled" IsEnabled="False" Margin="0,1,0,0" />
           <ToggleButton Content="Checked" IsChecked="True" IsEnabled="False" Margin="0,1,0,0" />
         </StackPanel>
-        <StackPanel>
+        <!--<StackPanel>
           <TextBlock Text="Toggle Switch"  TextAlignment="Center" Margin="0,0,0,1"/>
           <ToggleSwitch Content="Enabled" />
           <ToggleSwitch Content="Checked" IsChecked="True" Margin="0,1,0,0" />
@@ -85,7 +85,7 @@
               <TreeViewItem Header="Child"/>
             </TreeViewItem>
           </TreeView>
-        </StackPanel>
+        </StackPanel>-->
       </StackPanel>
     </StackPanel>
   </Grid>

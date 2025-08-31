@@ -60,6 +60,18 @@
                        FontWeight="Normal"
                        FontSize="{Binding EditorFontSize}"
                        WordWrap="False">
+          <ae:TextEditor.Options>
+            <ae:TextEditorOptions
+                 AllowToggleOverstrikeMode = "true"
+                 EnableTextDragDrop = "true"
+                 EnableRectangularSelection = "True"
+                 ShowBoxForControlCharacters = "true"
+                 EnableVirtualSpace="False"
+                 EnableHyperlinks="false"
+                 EnableEmailHyperlinks="False"
+                 HighlightCurrentLine = "true"/>
+          </ae:TextEditor.Options>
+
           <i:Interaction.Behaviors>
             <behaviors:TextEditorBehavior Extension=".xml" />
           </i:Interaction.Behaviors>

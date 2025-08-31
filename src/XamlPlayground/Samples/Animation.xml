@@ -317,8 +317,6 @@
       <Border Classes="Test Rect4" Background="Navy"/>
       <Border Classes="Test Rect5" Background="SeaGreen"/>
       <Border Classes="Test Rect6" Background="Red"/>
-      <Border Classes="Test Shadow" CornerRadius="10" Child="{x:Null}" />
-      <Border Classes="Test Shadow" CornerRadius="0 30 60 0" Child="{x:Null}" />
       <Border Classes="Test Rect7" Child="{x:Null}" />
       <Border Classes="Test Rect8" Child="{x:Null}" />
       <Border Classes="Test Rect9" Child="{x:Null}" />

@@ -65,11 +65,11 @@
     <local:ViewLocator />
   </Application.DataTemplates>
   <Application.Styles>
-    <SimpleTheme />
+    <FluentTheme />
 
     <console:ModernTheme />
 
-    <StyleInclude Source="avares://AvaloniaEdit/Themes/Simple/AvaloniaEdit.xaml" />
+    <StyleInclude Source="avares://AvaloniaEdit/Themes/Fluent/AvaloniaEdit.xaml" />
     <StyleInclude Source="avares://XamlPlayground/Controls/AdaptiveControl.axaml" />
     <Style Selector="Label.text > AccessText">
       <Setter Property="ClipToBounds" Value="False" />
