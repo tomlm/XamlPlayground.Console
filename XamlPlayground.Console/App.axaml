@@ -67,12 +67,7 @@
   <Application.Styles>
 
     <console:ModernTheme />
-    <StyleInclude Source="avares:/AvaloniaEdit.Consolonia.Theme.axaml" />
+    <StyleInclude Source="avares://Consolonia.AvaloniaEdit/Theme.axaml" />
     <StyleInclude Source="avares://XamlPlayground/Controls/AdaptiveControl.axaml" />
-
-    <!--<Style Selector="Label.text > AccessText">
-      <Setter Property="ClipToBounds" Value="False" />
-      <Setter Property="TextWrapping" Value="Wrap" />
-    </Style>-->
   </Application.Styles>
 </Application>
