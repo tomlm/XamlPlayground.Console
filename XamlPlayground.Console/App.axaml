@@ -65,8 +65,9 @@
     <local:ViewLocator />
   </Application.DataTemplates>
   <Application.Styles>
-
+    
     <console:ModernTheme />
+    
     <StyleInclude Source="avares://Consolonia.AvaloniaEdit/Theme.axaml" />
     <StyleInclude Source="avares://XamlPlayground/Controls/AdaptiveControl.axaml" />
   </Application.Styles>
